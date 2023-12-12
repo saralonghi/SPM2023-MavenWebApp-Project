@@ -44,7 +44,8 @@ class SeleniumNewTest {
 	@BeforeEach
 	void setUp() throws Exception {
 
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver");
+
+		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 

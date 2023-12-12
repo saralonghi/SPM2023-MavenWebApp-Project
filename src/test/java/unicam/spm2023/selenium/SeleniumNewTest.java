@@ -25,9 +25,7 @@ class SeleniumNewTest {
 
 
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		WebDriverManager.chromedriver().setup();
@@ -35,33 +33,26 @@ class SeleniumNewTest {
 	}
 	
 	
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {		
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+
+//---------------------------------------------------------------------------
 	@BeforeEach
 	void setUp() throws Exception {
-
-
 		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+//---------------------------------------------------------------------------
 	@AfterEach
 	void tearDown() throws Exception {
 		driver.close();
 		driver.quit();
 	}
 
+//---------------------------------------------------------------------------
 	@Test
 	void checkProsSite() throws InterruptedException {
 		
@@ -81,7 +72,7 @@ class SeleniumNewTest {
 	}
 	
 	@Test
-	//@Disabled
+	@Disabled
 	void checkProsSiteSearch() throws InterruptedException {
 		
 		// navigate your driver to mail.google.com

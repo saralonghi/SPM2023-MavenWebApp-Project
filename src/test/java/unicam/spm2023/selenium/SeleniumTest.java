@@ -1,7 +1,5 @@
 package unicam.spm2023.selenium;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 import static org.junit.jupiter.api.Assertions.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
@@ -16,36 +14,46 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 class SeleniumTest {
 
+
+
+	static String projectPath;
+	static WebDriver driver;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		WebDriverManager.chromedriver().setup();
+		projectPath = System.getProperty("user.dir");
 	}
 
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {		
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@BeforeEach
 	void setUp() throws Exception {
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
+
+
+
+
 	@AfterEach
 	void tearDown() throws Exception {
+		driver.close();
+		driver.quit();
 
 	}
 
+
+
+
+
+
+
 	@Test
-	//@Disabled
+	@Disabled
 	void checkProsSite() throws InterruptedException {
 		String projectPath = System.getProperty("user.dir");
 		// "C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project"

@@ -27,7 +27,7 @@ class SeleniumNewTest {
 	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		 projectPath = System.getProperty("user.dir");
+		 projectPath = System.getProperty("C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project");
 	}
 	
 	

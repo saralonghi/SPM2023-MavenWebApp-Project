@@ -47,7 +47,8 @@ class SeleniumTest {
 	@Test
 	//@Disabled
 	void checkProsSite() throws InterruptedException {
-		String projectPath = "C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project";
+		String projectPath = System.getProperty("user.dir");
+		// "C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project"
 		System.setProperty("webdriver.chrome.driver", projectPath + "/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
 
 		//System.out.println(projectPath)

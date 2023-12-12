@@ -1,6 +1,9 @@
 package unicam.spm2023.selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import static org.junit.jupiter.api.Assertions.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,14 +15,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 class SeleniumTest {
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		WebDriverManager.chromedriver().setup();
 	}
-	
+
 	
 	/**
 	 * @throws java.lang.Exception
@@ -44,7 +45,7 @@ class SeleniumTest {
 	}
 
 	@Test
-	@Disabled
+	//@Disabled
 	void checkProsSite() throws InterruptedException {
 		String projectPath = "C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project";
 		System.setProperty("webdriver.chrome.driver", projectPath + "/src/test/java/unicam/spm2023/drivers/chromedriver.exe");

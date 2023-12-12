@@ -1,6 +1,7 @@
 package unicam.spm2023.selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -21,13 +22,16 @@ class SeleniumNewTest {
 
 	static String projectPath;	
 	static WebDriver driver;
-	
+
+
+
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		 projectPath = System.getProperty("C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project");
+		WebDriverManager.chromedriver().setup();
+		projectPath = System.getProperty("C:/Users/longh/OneDrive/Desktop/SPM2023-MavenWebApp-Project");
 	}
 	
 	
@@ -77,7 +81,7 @@ class SeleniumNewTest {
 	}
 	
 	@Test
-	@Disabled
+	//@Disabled
 	void checkProsSiteSearch() throws InterruptedException {
 		
 		// navigate your driver to mail.google.com

@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.Keys;
 import java.util.List;
 import java.util.ArrayList;
@@ -22,14 +23,15 @@ class SeleniumNewTest {
 
 	static String projectPath;	
 	static WebDriver driver;
-
+	static ChromeOptions options = new ChromeOptions();
 
 
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+
 		WebDriverManager.chromedriver().setup();
-		projectPath = System.getProperty("user.dir");
+		options.addArguments("--headless");
 	}
 	
 	
@@ -41,8 +43,8 @@ class SeleniumNewTest {
 //---------------------------------------------------------------------------
 	@BeforeEach
 	void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
-		driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/unicam/spm2023/drivers/chromedriver.exe");
+		driver = new ChromeDriver(options);
 	}
 
 //---------------------------------------------------------------------------
@@ -59,11 +61,10 @@ class SeleniumNewTest {
 		driver.get("http://pros.unicam.it/");
 
 		Thread.sleep(3000);
-		
+
 		String at = driver.getTitle();
 		String et = "PROS - PROcesses & Services lab | Computer Science division @Unicam";
 		
-		//System.out.println(at);		
 		Thread.sleep(4000);
 
 		assertEquals(et,at);
